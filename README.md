@@ -4,6 +4,13 @@ Data provided by Kaggle platform.
 
 ## Descripion
 * Kaggle username `CitaZane`
+### Cross Validation scores
+* Logistic Regression       : 79.19%
+* Random Forest Classifier  : 80.07%
+* K Nearest Neighbour       : 79.41%
+* Support Vector Classifier : 80.54%
+* Gradient Boosting         : 82.68%
+
 TODO -> describe the project, feature engeneering, basic conclusions and best score achieved.
 
 ## Run the project
