@@ -1,5 +1,6 @@
 #Author defined
 data/
+solutions/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
