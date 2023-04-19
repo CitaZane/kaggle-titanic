@@ -8,16 +8,7 @@ Using feature engeneering train model and make prediction on who survived. The a
 * for easy audit check [kaggle leaderboard](https://www.kaggle.com/competitions/titanic/leaderboard?search=CitaZane) main goal was to get accuracy score at least **0.79**
 * otherwise choose one of the methods below:
 
-### If you have CONDA env
-Activate conda environment
-```bash
-conda env create -f environment.yml
-conda activate titanic
-```
-Run python script (or execute model_selection Notebook)
-```bash
-python3 ./scripts/main.py
-```       
+     
 ### Using Docker
 ```bash
 docker build -t titanic .
@@ -34,7 +25,21 @@ To run the main script (no need if you check out the notebooks), run this comman
 # docker ps
 docker exec -it <container_id> python3 scripts/main.py
 ```     
-
+### Using Conda
+Activate conda environment
+```bash
+conda env create -f environment.yml
+conda activate titanic
+```
+Run python script (or execute model_selection Notebook)
+```bash
+python3 ./scripts/main.py
+```  
+## Audit Helper
+* Environment: check out **environment.yml** file
+* Feaure engineering: is described below and in **notebooks/EDA.ipynb**. Is it working? Execute all **notebooks/EDA.ipynb** cells.
+* Scripts: Execute all **notebooks/model_selection.ipynb** cells / or run main.py script. Both versions train and predict on the best model.
+* Final score: [kaggle leaderboard](https://www.kaggle.com/competitions/titanic/leaderboard?search=CitaZane)
 
 
 ## File structure
