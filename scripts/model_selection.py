@@ -32,12 +32,6 @@ def cross_validate_models(X_train, y_train):
     lr_scores = cross_val_score(lr, X_train, y_train, cv=5)
     gb_scores = cross_val_score(gb, X_train, y_train, cv=5)
 
-    # Print the mean cross-validation score for each model
-    # print("Logistic Regression:", lr_scores.mean())
-    # print("Random Forest:", rf_scores.mean())
-    # print("KNN:", knn_scores.mean())
-    # print("SVM:", svm_scores.mean())
-    # print("Gradient Boosting:", gb_scores.mean())
     return pd.Series(data={'lg':lr_scores.mean(), 'rf':rf_scores.mean(), 'knn': knn_scores.mean(), 'svc':svm_scores.mean(), 'gb':gb_scores.mean()})
 
 def grid_search(mod,params, X,y):

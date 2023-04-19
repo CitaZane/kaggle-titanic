@@ -104,3 +104,10 @@ def extract_title(name):
     for word in words:
         if word.endswith('.'):
             return word[:-1]
+
+def find_missing_cols(X_test, X_train):
+    missing_cols = X_train.columns.difference(X_test.columns)
+    for col in missing_cols:
+        X_test[col] = 0
+    X_test = X_test.reindex(columns=X_train.columns, fill_value=0)
+    return X_test
