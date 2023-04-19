@@ -4,16 +4,23 @@ Data provided by Kaggle platform.
 
 ## Descripion
 * Kaggle username `CitaZane`
-### Cross Validation scores
-* Logistic Regression       : 79.19%
-* Random Forest Classifier  : 80.07%
-* K Nearest Neighbour       : 79.41%
-* Support Vector Classifier : 80.54%
-* Gradient Boosting         : 82.68%
+* for easy audit check [kaggle leaderboard](https://www.kaggle.com/competitions/titanic/leaderboard?search=CitaZane) if the score is at least **0.79**
+* otherwise choose one of the methods for running the project
 
-Based on data simplicity, looks  models like GradientBoosting and RandomForestClassifier overfits the data even whithout adjusting hyperparameters.
-Further working with KNN and SVC models, SVC seems to have achived a bit better results.
-Best score achieved : **0,79186** with **SVC**
+### If you have 
+
+### File structure
+- /notebooks
+        - EDA : explanatory  data analysis
+        - model_selction : find/trai/predict using notebook environment
+- /scripts
+        - preprocess : funcs for data cleaning and feature engeneering
+        - model_selcection: funcs for helping with selecting model
+        - main : find/trai/predict using python script (SVC model)
+
+- /solutions : hold solution file after running script or notebook,
+this file is uploded in kaggle for evaluation.
+- /data : holds train and test files from kaggle-titanic
 
 ### Feature Engeneering
 * **Family Size** : calculated by summing up Parch and SibSp + 1. Family size better represents the family sittuation. After calculating sum family size binne and LabelEncoded. Sibling and partner count values later dropped.
@@ -24,6 +31,10 @@ Best score achieved : **0,79186** with **SVC**
 
 * Sex, Embarked, Deck and Tile encoded using OneHotEncoder.
 
+### Results
+Based on data simplicity, looks  models like GradientBoosting and RandomForestClassifier overfits the data even whithout adjusting hyperparameters.
+Further working with KNN and SVC models, SVC seems to have achived a bit better results.
+Best score achieved : **0,79186** with **SVC**
 ## Run the project
 Activate conda environment
 ```bash
