@@ -11,84 +11,18 @@ Data provided by Kaggle platform.
 * Support Vector Classifier : 80.54%
 * Gradient Boosting         : 82.68%
 
-### GridSearch results
-#### Logistic Regression
-Params:  {'lg__C': 2.7825594022071245, 
-        'lg__class_weight': None, 
-        'lg__max_iter': 10000, 
-        'lg__solver': 'lbfgs'}
+Based on data simplicity, looks  models like GradientBoosting and RandomForestClassifier overfits the data even whithout adjusting hyperparameters.
+Further working with KNN and SVC models, SVC seems to have achived a bit better results.
+Best score achieved : **0,79186** with **SVC**
 
-Score: 80.09%
+### Feature Engeneering
+* **Family Size** : calculated by summing up Parch and SibSp + 1. Family size better represents the family sittuation. After calculating sum family size binne and LabelEncoded. Sibling and partner count values later dropped.
+* **Deck** : extracted first letter from cabin name. Further inspecting the Deck and pasanger class corrolation Decks also grouped in bigger groupes. For passanges that does not have cabin data used deck **N**. Cabin value dropped.
+* **Age** : Age refactored to create equal size buckets and LabelEncoded.
+* **Fare** : refactored to create equal size buckets and LabelEncoded.
+* **Titles** : Using provided passanger Names extracted titles. Titles grouped/mapped in larger groupes based on regional differences. For mapping main [resource](https://www.kaggle.com/code/konstantinmasich/titanic-0-82-0-83/notebook)
 
-#### KNN
-Params:  {'knn__n_neighbors': 5, 
-        'knn__p': 1, 
-        'knn__weights': 'uniform'}
-
-Score: 86.39%
-
-#### SVC
-Params:  {'svc__C': 2.0, 
-        'svc__class_weight': None, 
-        'svc__degree': 1, 
-        'svc__gamma': 'scale', 
-        'svc__kernel': 'rbf', 
-        'svc__shrinking': False}
-
-score: 84.36%
-
-#### RandomForest
-
-Params(randomized):  {'n_estimators': 200, 
-            'min_samples_split': 10, 
-            'min_samples_leaf': 2, 
-            'max_features': None, 
-            'max_depth': None, 
-            'criterion': 'entropy'}
-Score(randomized): 90.55%
-
-Params:  {'criterion': 'entropy', 
-        'max_depth': None, 
-        'max_features': None, 
-        'min_samples_leaf': 1, 
-        'min_samples_split': 10, 
-        'n_estimators': 200}
-
-Score: 92.01%
-
-#### Grdient Boosting
-Params(randomized):  {
-        'warm_start': False, 
-        'subsample': 0.7, 
-        'n_estimators': 100, 
-        'min_samples_split': 10, 
-        'min_samples_leaf': 2, 
-        'max_depth': 5, 
-        'loss': 'exponential', 
-        'learning_rate': 0.01, 
-        'criterion': 'friedman_mse'}
-
-Score(randomized): 85.38%
-
-Params:  {
-    'criterion': 'squared_error', 
-    'learning_rate': 0.1, 
-    'loss': 'exponential', 
-    'max_depth': 5, 
-    'min_samples_leaf': 1, 
-    'min_samples_split': 2, 
-    'n_estimators': 100, 
-    'subsample': 0.1, 
-    'warm_start': True}
-
-Score: 86.39%
-
-### First iteration scores
-* KNN : 76.01%
-* rf  : 77.51%
-* svc : 77.99%
-
-TODO -> describe the project, feature engeneering, basic conclusions and best score achieved.
+* Sex, Embarked, Deck and Tile encoded using OneHotEncoder.
 
 ## Run the project
 Activate conda environment
@@ -100,5 +34,5 @@ Run python scripts
 ```bash
 python3 ./scripts/main.py
 ```
-<!-- Save currne env packages -->
+<!-- Save currnet env packages -->
 <!-- conda env export --from-history > environment.yml -->

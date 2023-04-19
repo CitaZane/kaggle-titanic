@@ -41,7 +41,7 @@ def cross_validate_models(X_train, y_train):
     return pd.Series(data={'lg':lr_scores.mean(), 'rf':rf_scores.mean(), 'knn': knn_scores.mean(), 'svc':svm_scores.mean(), 'gb':gb_scores.mean()})
 
 def grid_search(mod,params, X,y):
-    model = GridSearchCV(mod, cv=5, n_jobs=-1, param_grid=params)
+    model = GridSearchCV(mod, cv=10, n_jobs=-1, param_grid=params)
     model.fit(X,y)
     print("Params: ",model.best_params_)
     return model.score(X,y), model.best_estimator_
