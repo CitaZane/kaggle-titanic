@@ -6,7 +6,7 @@ Using feature engeneering train model and make prediction on who survived. The a
 ## Descripion
 * Kaggle username `CitaZane`
 * for easy audit check [kaggle leaderboard](https://www.kaggle.com/competitions/titanic/leaderboard?search=CitaZane) main goal was to get accuracy score at least **0.79**
-* otherwise choose one of the methods below:
+* otherwise to dig deeper into the audit choose one of the methods below:
 
      
 ### Using Docker
@@ -17,9 +17,10 @@ docker build -t titanic .
 ```bash
 docker run -p 8888:8888 titanic
 ```       
-Click on link to open jupyter notebook on localhost.
-Go to Notebook files and run the cells.
-To run the main script (no need if you check out the notebooks), run this command while container is running opening another terminal window:
+* Click on link to open jupyter notebook on localhost.
+* Go to Notebook files and run the cells.
+
+* To run the main script (no need if you check out the notebooks), run this command while container is running opening another terminal window:
 ```bash
 #find conainer id 
 # docker ps
